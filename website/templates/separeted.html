@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Catareco{% endblock %}
+{% block content %}
+  <div class="container" style="padding-top: 40px; padding-bottom: 30px;">
+    <div class="card" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); overflow: hidden;">
+      <div class="card-header" style="background-color: #6c757d; color: #fff;">
+        <h1 align="center" style="font-family: 'Roboto', sans-serif;">Résultat de la mesure</h1>
+      </div>
+      <div class="card-body" style="padding: 40px;">
+        <div class="text-center">
+          <div class="info">
+            <div class="info_data">
+              <div class="data">
+                <h4 style="font-family: 'Roboto', sans-serif; color: #333;">INFORMATIONS</h4>
+                <p style="font-family: 'Roboto', sans-serif; color: #777;">Détails des mesures ci-dessous</p>
+              </div>
+              <div class="data">
+                <h4 style="font-family: 'Roboto', sans-serif; color: #333;">Moyenne de la mesure : {{ weight }} ppm</h4>
+                <p></p>
+              </div>
+
+              <div class="data">
+                <h4 style="font-family: 'Roboto', sans-serif; color: #333;">Résultat:</h4>
+                
+                <!-- Image with hover effect -->
+                <div style="position: relative; overflow: hidden; border-radius: 10px; max-width: 100%; margin: 0 auto;">
+                  <img src="data:image/png;base64,{{ image }}" class="img-fluid" alt="Résultat"
+                    style="transition: transform 0.3s ease-in-out; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
+                </div>
+                
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Adding responsive styles and hover animation -->
+  <style>
+    /* Slight zoom on hover */
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    h1, h4 {
+      letter-spacing: 1.5px;
+    }
+
+    /* Limit the image size on large screens */
+    @media (min-width: 768px) {
+      img {
+        max-width: 80%; /* Restrict image size on larger screens */
+      }
+
+      .container {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+    }
+
+    /* Responsive adjustments for small screens */
+    @media (max-width: 500px) {
+      .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      
+      .card-body {
+        padding: 20px;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      h4 {
+        font-size: 1rem;
+      }
+
+      .card-body {
+        padding: 10px;
+      }
+    }
+  </style>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Mes mesures{% endblock %}
+{% block content %}
+    <h1 align="center" style="padding-top: 50px; padding-bottom: 50px;">Mes mesures</h1>
+
+    <div class="row mt-3 d-flex justify-content-center" style="padding-top: 20px;">
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Mesure Récente (en ppm)</h5>
+                    <p class="card-text">Il y a 2 jours </p>
+                    <p class="card-text">17,3 </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Mesure Récente (en ppm)</h5>
+                    <p class="card-text"> Il y a 1 jour </p>
+                    <p class="card-text"> 17 </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Dernière Mesure (en ppm)</h5>
+                    <p class="card-text">Il y a quelques heures</p>
+                    <p class="card-text">16,8 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block modal %}
+  <!-- Fullscreen loader container -->
+  <div class="loading-container" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: rgba(0, 0, 0, 0.8);">
+    <div class="card text-center" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); background-color: #fff; padding: 40px; max-width: 500px; width: 100%;">
+      <div class="card-header" style="background-color: #343a40; color: #fff; border-radius: 10px 10px 0 0;">
+        <h1 style="font-family: 'Roboto', sans-serif; color: #fff;">Chargement..</h1>
+      </div>
+      <div class="card-body" style="padding: 20px;">
+        <!-- Awesome Loading Spinner -->
+        <div class="loader"></div>
+        <p style="font-family: 'Roboto', sans-serif; color: #777; margin-top: 20px;">Prendre les mesures en cours.. </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Adding the custom loader styles -->
+  <style>
+    /* Spinner styles */
+    .loader {
+      border: 8px solid #f3f3f3; /* Light grey */
+      border-top: 8px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 1.5s linear infinite;
+      margin: 0 auto;
+    }
+
+    /* Spin animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Add some shadow and transitions to the modal */
+    .card {
+      animation: fadeIn 0.5s ease-in-out;
+      transition: box-shadow 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Responsive adjustments for small screens */
+    @media (max-width: 576px) {
+      .card {
+        max-width: 90%;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .loader {
+        width: 40px;
+        height: 40px;
+        border-width: 6px;
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function(){
+        // Show the loading modal
+        $("#exampleModal").modal("show");
+
+        // Add a delay (in milliseconds) before navigating to views.separando
+        setTimeout(function(){
+            window.location.href = "/processando";
+        }, 3000); // Adjust the delay as needed (3 seconds in this case)
+    });
+</script>
+{% endblock %}

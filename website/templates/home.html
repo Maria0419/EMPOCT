@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Catareco{% endblock %}
+{% block content %}
+  <div class="container" style="padding-top: 40px; padding-bottom: 30px;">
+    <div class="card" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
+      <div class="card-header" style="background-color: #6c757d; color: #fff;">
+        <h1 align="center" style="font-family: 'Roboto', sans-serif;">Bienvenue</h1>
+      </div>
+      <div class="card-body" style="padding: 30px;">
+        <div class="text-center">
+          <div class="info">
+            <div class="info_data">
+              <div class="data">
+                <h4 style="font-family: 'Roboto', sans-serif; color: #333;">Nom: {{ user.first_name }}</h4>
+                <p></p>
+              </div>
+              <div class="data">
+                <h4 style="font-family: 'Roboto', sans-serif; color: #333;">Email: {{ user.cpf }}</h4>
+                <p></p>
+              </div>
+              <div class="data">
+                <h4 style="font-family: 'Roboto', sans-serif; color: #333;">Dernière mesure: {{ user.balance }} ppm</h4>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Container adjustments for smaller screens */
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Card and text adjustments */
+    h1, h4 {
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 1.5px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .card-body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block javascript %}
+<script>
+  // Suppose que user.cpf est un nombre entier
+  // var cpf = {{user.cpf}}; 
+
+  // // Convertit le nombre en chaîne et formate au format XXX.XXX.XXX-XX
+  // var cpfFormatado = String(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+
+  // Affiche le CPF formaté dans l'élément avec l'ID 'cpf'
+  // document.getElementById("cpf").textContent = cpfFormatado;
+</script>
+{% endblock %}
