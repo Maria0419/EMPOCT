@@ -1,27 +1,21 @@
-{% extends "base.html" %} {% block title %}Cadastra-se{% endblock %} {% block
+{% extends "base.html" %} S'inscrire {% block title %}S'inscrire{% endblock %} {% block
 content %}
 
 <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
 
 <script type="text/javascript" src="js/jquery.mask.min.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#cpf').mask('000.000.000-00');
-    });
-</script>
-
 <form method="POST">
   <h3 align="center">S'inscrire</h3>
 
   <div class="form-group">                             
-    <label for="cpf">Email:</label>
+    <label for="email">Email:</label>
     <input 
       type="text" 
       class="form-control" 
-      id="cpf" 
+      id="email" 
       maxlength="30"  
-      name="cpf" 
+      name="email" 
       placeholder='Votre email ici..'>
   </div>
   <div class="form-group">

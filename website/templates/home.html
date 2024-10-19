@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% block title %}Catareco{% endblock %}
+{% block title %}EMPOCT{% endblock %}
 {% block content %}
   <div class="container" style="padding-top: 40px; padding-bottom: 30px;">
-    <div class="card" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
-      <div class="card-header" style="background-color: #6c757d; color: #fff;">
+    <div class="card" style="border-radius: 5px; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);">
+      <div class="card-header" style="background-color: #001f3f; color: #fff;">
         <h1 align="center" style="font-family: 'Roboto', sans-serif;">Bienvenue</h1>
       </div>
       <div class="card-body" style="padding: 30px;">
@@ -11,15 +11,15 @@
           <div class="info">
             <div class="info_data">
               <div class="data">
-                <h4 style="font-family: 'Roboto', sans-serif; color: #333;">Nom: {{ user.first_name }}</h4>
+                <h4 style="font-family: 'Roboto', sans-serif; color: #333;"><strong>Nom:</strong> {{ user.first_name }}</h4>
                 <p></p>
               </div>
               <div class="data">
-                <h4 style="font-family: 'Roboto', sans-serif; color: #333;">Email: {{ user.cpf }}</h4>
+                <h4 style="font-family: 'Roboto', sans-serif; color: #333;"><strong>Email:</strong> {{ user.email }}</h4>
                 <p></p>
               </div>
               <div class="data">
-                <h4 style="font-family: 'Roboto', sans-serif; color: #333;">Dernière mesure: {{ user.balance }} ppm</h4>
+                <h4 style="font-family: 'Roboto', sans-serif; color: #333;"><strong>Dernière mesure:</strong> {{ user.ppm }} ppm</h4>
                 <p></p>
               </div>
             </div>
